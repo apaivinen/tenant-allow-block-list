@@ -4,7 +4,7 @@
 	"features": {
 		"ghcr.io/devcontainers/features/common-utils:2": {}
 	},
-	"postCreateCommand": "pwsh -NoProfile -Command \"Install-Module -Name ExchangeOnlineManagement -Scope AllUsers -Force -Repository PSGallery\"",
+	"postCreateCommand": "pwsh -NoProfile -Command \"Set-PSRepository -Name PSGallery -InstallationPolicy Trusted; Install-Module -Name ExchangeOnlineManagement -Scope CurrentUser -Force -AllowClobber -Repository PSGallery; New-Item -ItemType File -Path $PROFILE.CurrentUserAllHosts -Force | Out-Null; Add-Content -Path $PROFILE.CurrentUserAllHosts -Value 'Import-Module ExchangeOnlineManagement'\"",
 	"customizations": {
 		"vscode": {
 			"extensions": [

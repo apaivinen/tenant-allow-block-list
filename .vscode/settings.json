@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^pwsh -NoProfile -Command \"Get-Module -ListAvailable ExchangeOnlineManagement\"; pwsh -NoProfile -Command \"Get-Command New-TenantAllowBlockListItems -ErrorAction SilentlyContinue\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}
